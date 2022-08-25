@@ -132,7 +132,7 @@ y <- sample(1:3, size = nsamples, prob = c(.1, .7, .2), replace = TRUE)
 x <- rnorm(nsamples,
            mean = ifelse(y==1, 1, ifelse(y==2, 2, 5)),
            sd = ifelse(y==1, 0.1, ifelse(y==2, 0.5, 1)))
-
+#sample --> Genera una muestra del vector x
 tibble(samples = x) |>
 ggplot(aes(x)) +
   geom_histogram(aes(y = ..density..), color = "white") +
