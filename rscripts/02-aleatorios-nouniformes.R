@@ -61,7 +61,7 @@ rbinomial <- function(nsamples, size, theta){
   x <- c()
   for (jj in 1:nsamples){
     u <- runif(1)
-    x[jj] <- which(probs > u)[1] #no entiendo el comando
+    x[jj] <- which(probs > u)[1] 
   }
   return(x)
 }
