@@ -46,12 +46,13 @@ runif(3 * 10^4) |>        # Genera uniformes
 set.seed(108)
 Sigma <- diag(2); Sigma[1,2] <- .75; Sigma[2,1] <- .75;
 L <- chol(Sigma)
+#chol computes the cholesky factorization of a real symmetric positive definite square matrix
 
 Z <- rnorm(2 * 10^4)      # Generamos vectores estandar
 Z <- matrix(Z, nrow = 2)  # Reacomodamos en matriz
 X <- t(L) %*% Z           # Transformacion lineal
 cov(t(X))
-
+# %*% multiplicación de matrices
 k <- 1:10
 pbinom(k, 10, .3)
 
@@ -60,7 +61,7 @@ rbinomial <- function(nsamples, size, theta){
   x <- c()
   for (jj in 1:nsamples){
     u <- runif(1)
-    x[jj] <- which(probs > u)[1]
+    x[jj] <- which(probs > u)[1] #no entiendo el comando
   }
   return(x)
 }
